@@ -11,7 +11,7 @@ score = 0
 lives = 5
 
 wn=turtle.Screen()
-wn.title('falling objects')
+wn.title('Falling objects')
 wn.bgcolor('black')
 wn.setup(width=600,height=600)
 wn.tracer(0)
@@ -82,7 +82,7 @@ while True:
     text2 = ["Lives: ",str(lives)]
     cv2.putText(frame,''.join(text),(20,460),cv2.FONT_HERSHEY_COMPLEX,1, (255,255,0), 1, cv2.LINE_AA)
     cv2.putText(frame,''.join(text2),(420,460),cv2.FONT_HERSHEY_COMPLEX,1, (255,255,0), 1, cv2.LINE_AA)
-    cv2.imshow("Game",frame)
+    cv2.imshow("Game Controller",frame)
     wn.update()	
     if player.direction == 'left':
         x = player.xcor()
