@@ -27,26 +27,26 @@ player.direction ='stop'
 #create list of good guys
 players =[ ]
 for _ in range(20):	
-	player2=turtle.Turtle()
-	player2.speed(0)
-	player2.shape('circle')
-	player2.color('green')
-	player2.penup()
-	player2.goto(-100,250)
-	player2.speed = random.randint(2,5)
-	players.append(player2)
+    player2=turtle.Turtle()
+    player2.speed(0)
+    player2.shape('circle')
+    player2.color('green')
+    player2.penup()
+    player2.goto(-100,250)
+    player2.speed = random.randint(2,5)
+    players.append(player2)
 
 #create list of good guys
 playerss=[ ]
 for _ in range(10):	
-	player3=turtle.Turtle()
-	player3.speed(0)
-	player3.shape('circle')
-	player3.color('red')
-	player3.penup()
-	player3.goto(100,250)
-	player3.speed = random.randint(2,5)
-	playerss.append(player3)
+    player3=turtle.Turtle()
+    player3.speed(0)
+    player3.shape('circle')
+    player3.color('red')
+    player3.penup()
+    player3.goto(100,250)
+    player3.speed = random.randint(2,5)
+    playerss.append(player3)
 
 #make pen
 pen=turtle.Turtle()
@@ -62,10 +62,10 @@ pen.write('score : {} lives:{}'.format(score,lives),align='center',font=font)
 
 #functions
 def go_left():
-	player.direction = 'left'
+    player.direction = 'left'
 
 def go_right():
-	player.direction = 'right'
+    player.direction = 'right'
 
 while True:
     ret,frame = video.read()
@@ -76,6 +76,8 @@ while True:
 
         if fingersUp == [0,0,0,0,0]:
             go_left()
+        elif fingersUp ==[0,0,1,0,0]:
+            exit()
         else:
             go_right()
     text = ["Score: ",str(score)]
