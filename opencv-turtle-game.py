@@ -8,7 +8,7 @@ detector = HandDetector(detectionCon=0.8,maxHands=1)
 video = cv2.VideoCapture(0)
 
 score = 0
-lives = 3
+lives = 5
 
 wn=turtle.Screen()
 wn.title('falling objects')
@@ -78,6 +78,10 @@ while True:
             go_left()
         else:
             go_right()
+    text = ["Score: ",str(score)]
+    text2 = ["Lives: ",str(lives)]
+    cv2.putText(frame,''.join(text),(20,460),cv2.FONT_HERSHEY_COMPLEX,1, (255,255,0), 1, cv2.LINE_AA)
+    cv2.putText(frame,''.join(text2),(420,460),cv2.FONT_HERSHEY_COMPLEX,1, (255,255,0), 1, cv2.LINE_AA)
     cv2.imshow("Game",frame)
     wn.update()	
     if player.direction == 'left':
