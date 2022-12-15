@@ -64,11 +64,12 @@ for i in range(len(keys)):
 
 while True:
     success, img = cap.read()
-    img = detector.findHands(img)
-    lmList, bboxInfo = detector.findPosition(img)
+    hands,img = detector.findHands(img)
+    
     img = drawAll(img, buttonList)
 
-    if lmList:
+    if hands:
+        lmList = hands[0]
         for button in buttonList:
             x, y = button.pos
             w, h = button.size
